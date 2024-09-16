@@ -11,6 +11,10 @@ Make sure that you have your current kernel headers and dkms package installed.
 
     sudo apt install dkms linux-headers-$(uname -r)
 
+On Proxmox you should use the following
+
+    sudo apt install dkms pve-headers-$(uname -r)
+
 Add the dkms module to the tree
 
     sudo dkms add ./
