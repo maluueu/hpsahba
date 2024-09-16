@@ -4,8 +4,9 @@ Downloads and automatically patches hpsa driver from stable linux kernel tree.
 
 # Usage
 
-Run `./patch.sh` to download and patch hpsa driver. This script also takes an
-optional argument VERSION that sets what kernel version to patch.
+To download and patch the hpsa driver for your Linux kernel version run the below command. Your version is automatically detected and you are being asked for confirmation. 
+
+    ./patch.sh 
 
 Make sure that you have your current kernel headers and dkms package installed.
 
