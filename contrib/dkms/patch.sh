@@ -1,7 +1,17 @@
 #!/bin/bash
 set -e
 
-VERSION=${1:-5.8}
+# Get the major and minor version from uname
+VERSION=$(uname -r | cut -d. -f1,2)
+
+# Ask the user to confirm the detected version
+read -p "The detected version is $VERSION. Type 'yes' to confirm and continue: " RESPONSE
+
+# If the user types 'yes', continue; otherwise, stop the script
+if [ "$RESPONSE" != "yes" ]; then
+    echo "Aborting."
+    exit 1
+fi
 
 echo "Patching for kernel ${VERSION}"
 
