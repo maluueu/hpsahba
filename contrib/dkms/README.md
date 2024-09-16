@@ -32,3 +32,8 @@ After that is done, unload the old hpsa driver and insert the new one
 
     sudo modprobe -r hpsa
     sudo modprobe hpsa hpsa_use_nvram_hba_flag=1
+
+To persist the modprobe commands and ensure the hpsa module is loaded with the `hpsa_use_nvram_hba_flag=1` parameter at every boot, do the following
+
+    sudo echo "options hpsa hpsa_use_nvram_hba_flag=1" > /etc/modprobe.d/hpsa.conf
+    sudo update-initramfs -u
